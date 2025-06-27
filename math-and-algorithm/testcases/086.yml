@@ -1,0 +1,24 @@
+---
+type: Batch
+timelimit: 2s
+match: Lines
+
+cases:
+  - name: sample1
+    in: |
+      8
+      (()())()
+    out: |
+      Yes
+  - name: sample2
+    in: |
+      6
+      ))()((
+    out: |
+      No
+
+extend:
+  - type: Text
+    path: "./086"
+    in: /in/*.txt
+    out: /out/*.txt

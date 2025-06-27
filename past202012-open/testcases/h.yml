@@ -1,0 +1,83 @@
+---
+type: Batch
+timelimit: 2s
+match: Lines
+
+cases:
+  - name: sample1
+    in: |
+      3 3
+      1 1
+      ..#
+      ^^.
+      ><.
+    out: |
+      oo#
+      ooo
+      xxo
+  - name: sample2
+    in: |
+      10 12
+      9 1
+      #.^<..><<...
+      #<>.#<^.<<.^
+      ^.<>.^.^.^>.
+      ^.>#^><#....
+      .>.^>#...<<>
+      ....^^.#<.<.
+      .>^..^#><#.^
+      ......#>....
+      ..<#<...^>^.
+      <..^>^^...^<
+    out: |
+      #xxxxxxxxxxx
+      #xxx#xxxxxxx
+      xooxxxxxxxxx
+      xox#xxx#xxxx
+      oooxx#xxxxxx
+      ooooxxx#xxxx
+      ooooox#xx#xx
+      oooooo#xxxxx
+      ooo#xoooxxxx
+      xooxooooooxx
+  - name: sample3
+    in: |
+      15 20
+      13 9
+      ####..<#^>#>.<<><^..
+      #.>#>.^#^.>><>...^..
+      >..<>.#.>.>.>...#..<
+      <^>.#..<>^#<#.>.<.^.
+      >#<^>.>#^>#^.^.#^><^
+      <^.^.#<...<.><#>...#
+      .<>....^..#>>#..>>><
+      .<#<^#.>#>^^.>.##.^<
+      .#.^.....<<#^#><^<<<
+      ^.#>.#^.>.^.^<<>..><
+      .^#^<^^^<......^>.#^
+      .<..#>...^>^.^<..<.^
+      #.^.#..#.....>#.^^.>
+      .#^..>>><>>>^..#^.^^
+      .>#..<..<>.#>..^.#.^
+    out: |
+      ####xxx#xx#xxxxxxxxx
+      #xx#xxx#xxxxxxxxxxxx
+      xxxxxx#xxxxxxxxx#xxx
+      xxxx#xxxxx#x#xxxxxxx
+      x#xxxxx#xx#xxxx#xxxx
+      xxoxo#xxxxxxxx#xxxx#
+      xxoooooxxx#xx#xxxxxx
+      xx#xo#ox#xxxxxx##xxx
+      x#xxooooooo#x#xxxxxx
+      xx#oo#ooooooxxxoooxx
+      xx#ooxoooooooooooo#x
+      xxoo#oooooooooooooox
+      #ooo#oo#ooooox#oooox
+      x#oooxxxxoooooo#ooox
+      xx#oooooooo#oooxo#ox
+
+extend:
+  - type: Text
+    path: "./h"
+    in: /in/*.txt
+    out: /out/*.txt
